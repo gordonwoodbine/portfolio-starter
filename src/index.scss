@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+:root {
+  --site-highlight: crimson;
+  --site-background: whitesmoke;
+  --site-dark: #333;
+}
+
 body,
 h1,
 h2,
@@ -19,12 +25,12 @@ ul {
 }
 
 body {
-  background-color: whitesmoke;
-  color: #333;
+  background-color: var(--site-background);
+  color: var(--site-dark);
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -35,11 +41,17 @@ body {
 }
 
 .highlight {
-  color: crimson;
+  color: var(--site-highlight);
+}
+
+.app {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
 }
 
 .site-header .container {
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid #bbb;
 }
 
@@ -68,10 +80,97 @@ body {
       transition: transform 0.3s ease;
 
       &:hover {
-        color: crimson;
+        color: var(--site-highlight);
         transform: scale(1.2);
-        text-shadow: 0 0 1px crimson;
+        text-shadow: 0 0 1px var(--site-highlight);
       }
     }
+  }
+}
+
+/* Home Page */
+
+.home {
+  margin-top: 10rem;
+
+  &__text {
+    &__greet {
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+    }
+
+    &__tag {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__avatar {
+    & img {
+      width: 100%;
+    }
+  }
+
+  & p {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    font-weight: 500;
+  }
+}
+
+.grid-it {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr 1fr;
+}
+
+i {
+  font-size: 2.8rem;
+  margin-left: 5px;
+}
+
+.home-btns {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.btn {
+  width: 100%;
+  background: radial-gradient(circle at 67% 0%, crimson, rgb(255, 8, 57));
+  color: white;
+  border: 3px solid crimson;
+  padding: 1rem;
+  border-radius: 100px;
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn--outline {
+  background: whitesmoke;
+  color: crimson;
+}
+
+.btn:first-of-type {
+  margin-right: 1rem;
+}
+
+/* Footer */
+
+.site-footer {
+  background-color: var(--site-dark);
+  color: var(--site-background);
+  padding: 1rem 0;
+  text-align: center;
+
+  & p {
+    margin: 0.5rem 0;
+  }
+
+  &__icon {
+    font-size: 1.3rem;
+    margin: 0 0.3rem;
+    transform: translateY(0);
   }
 }
