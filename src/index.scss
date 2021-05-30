@@ -27,6 +27,13 @@ ul {
 body {
   background-color: var(--site-background);
   color: var(--site-dark);
+  overflow-x: hidden;
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.6rem;
 }
 
 .container {
@@ -56,7 +63,7 @@ body {
 }
 
 .site-header {
-  padding: 2rem 0;
+  padding: 2rem;
 
   &__logo {
     &__icon {
@@ -88,14 +95,19 @@ body {
   }
 }
 
+main {
+  padding: 0 2rem;
+}
+
 /* Home Page */
 
 .home {
-  margin-top: 10rem;
-
+  height: 100%;
   &__text {
+    margin-bottom: 4rem;
     &__greet {
       font-size: 1.4rem;
+      font-weight: 700;
       margin-bottom: 2rem;
     }
 
@@ -120,8 +132,23 @@ body {
 
 .grid-it {
   display: grid;
+  height: 100%;
+  align-items: center;
   gap: 40px;
   grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 1000px) {
+  .grid-it {
+    grid-template-columns: 1fr;
+  }
+
+  .home__text,
+  .home__avatar {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 i {
@@ -132,6 +159,10 @@ i {
 .home-btns {
   display: flex;
   margin-top: 2rem;
+}
+
+.link-btn {
+  width: 100%;
 }
 
 .btn {
@@ -152,15 +183,51 @@ i {
   color: crimson;
 }
 
-.btn:first-of-type {
+.link-btn:first-of-type {
   margin-right: 1rem;
+}
+
+/* About Page */
+
+.about {
+  margin-top: 2rem;
+
+  .box {
+    display: inline-block;
+    padding: 2rem;
+    transform: skew(-4deg);
+    border: 3px solid crimson;
+    margin-bottom: 2rem;
+    background-color: crimson;
+    color: white;
+  }
+
+  &__left {
+    margin: 2rem 0;
+    max-width: 700px;
+  }
+
+  &__right {
+    max-width: 700px;
+    margin-left: auto;
+    text-align: right;
+
+    & .box {
+      transform: skew(4deg);
+    }
+  }
+
+  & i {
+    font-size: 1.6rem;
+  }
 }
 
 /* Footer */
 
 .site-footer {
-  background-color: var(--site-dark);
-  color: var(--site-background);
+  background-color: var(--site-background);
+  color: var(--site-dark);
+  border-top: 2px dashed var(--site-dark);
   padding: 1rem 0;
   text-align: center;
 
@@ -171,6 +238,10 @@ i {
   &__icon {
     font-size: 1.3rem;
     margin: 0 0.3rem;
-    transform: translateY(0);
+  }
+
+  .heart {
+    color: var(--site-highlight);
+    transform: translateY(2px);
   }
 }
