@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { sectionVariants } from '../helpers/motionVariants';
+import { sectionVariants, buttonVariants } from '../helpers/motionVariants';
 
 const Home = () => {
   return (
@@ -21,16 +21,16 @@ const Home = () => {
           <p>I built this site so you can learn a little bit more about me, the technologies I like to use and some of the projects I've built to date. I hope you like it!</p>
           <div className="home-btns">
             <Link to="/about" className="link-btn">
-              <button className="btn cta-btn">About Me</button>
+              <motion.button className="btn cta-btn" variants={buttonVariants} whileHover='hover'>About Me</motion.button>
             </Link>
-            <Link className="link-btn">
-              <button className="btn cta-btn btn--outline">Projects</button>
+            <Link to="/projects" className="link-btn">
+              <motion.button className="btn cta-btn btn--outline" variants={buttonVariants} whileHover='hover'>Projects</motion.button>
             </Link>
           </div>
         </div>
         <div className="home__avatar">
           <div className="home__avatar__img-wrapper">
-            <img src="home-icon.png" alt="icon of a computer and a mobile phone" />
+            <img src="img/home-icon.png" alt="icon of a computer and a mobile phone" />
           </div>
         </div>
       </div>

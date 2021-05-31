@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const headerVariants = {
@@ -32,10 +32,10 @@ const Header = () => {
           </p>
         </div>
         <nav className="site-header__links">
-          <Link to="/" className="site-header__links__link">Home</Link>
-          <Link to="/about" className="site-header__links__link">About</Link>
-          <Link to="/" className="site-header__links__link">Projects</Link>
-          <Link to="/" className="site-header__links__link">Contact</Link>
+          <NavLink to="/" className="site-header__links__link" activeClassName="active" exact={true}>Home</NavLink>
+          <NavLink to="/about" className="site-header__links__link" activeClassName="active">About</NavLink>
+          <NavLink to="/projects" className="site-header__links__link" activeClassName="active">Projects</NavLink>
+          <NavLink to="/contact" className="site-header__links__link" activeClassName="active">Contact</NavLink>
         </nav>
       </motion.div>
     </header>

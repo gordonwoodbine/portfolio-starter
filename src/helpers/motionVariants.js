@@ -4,11 +4,25 @@ export const sectionVariants = {
   },
   visible: {
     x: 0,
-    when: 'beforeChildren',
-    staggerChildren: 1.4
+    transition: {
+      type: 'spring',
+      mass: 0.4,
+      damping: 8
+    }
   },
   exit: {
     x: '-100vw',
     transition: { ease: 'easeInOut'}
   }
 };
+
+export const buttonVariants = {
+  hover: {
+    scale: 1.1,
+    transition: {
+      duration: 0.3,
+      repeat: Infinity,
+      repeatType: 'reverse'
+    }
+  }
+}

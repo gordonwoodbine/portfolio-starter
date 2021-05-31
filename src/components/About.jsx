@@ -12,6 +12,7 @@ const containerVariants = {
       type: 'spring', 
       mass: 0.4,
       damping: 8,
+      when: 'beforeChildren',
       staggerChildren: 0.4
     }
   },
@@ -41,12 +42,12 @@ const About = () => {
       animate='visible'
       exit='exit'
     >
-      <motion.div className="about__left" variants={childVariants}>
+      <div className="about__left">
         <div className="box">
           <h2>A Little Bit About Me...</h2>
         </div>
         <p>As you may have worked out by this point, my name is Mike. I decided to become a web developer last year - I was working in retail when the world fell apart and I realised it was time for a change. I've always loved technology, I like figuring out how things work and I enjoy solving problems so I figured web development could be a good fit for me.</p>
-      </motion.div>
+      </div>
       <motion.div className="about__right" variants={childVariants}>
         <div className="box">
           <h2>It's a Whole New World!</h2>
