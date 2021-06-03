@@ -24,6 +24,23 @@ ul {
   color: inherit;
 }
 
+.test {
+  margin: 2rem 0 1rem 0;
+  display: inline-block;
+  position: relative;
+}
+
+.test:before {
+  content: '';
+  width: 100%;
+  height: 4px;
+  background: crimson;
+  position: absolute;
+  bottom: -14px;
+  left: 0;
+  transform: rotate(1deg);
+}
+
 body {
   background-color: var(--site-background);
   color: var(--site-dark);
@@ -47,14 +64,30 @@ p {
   align-items: center;
 }
 
+.img {
+  display: block;
+  max-width: 75%;
+  margin-top: 2rem;
+  border: 4px solid #333;
+}
+
 .highlight {
   color: var(--site-highlight);
+}
+
+.q {
+  font-weight: 700;
+}
+
+.a {
+  display: inline-block;
+  margin-left: 30px;
 }
 
 .box {
   display: inline-block;
   padding: 2rem;
-  transform: skew(-4deg);
+  transform: skew(-1deg);
   border: 3px solid crimson;
   margin-bottom: 2rem;
   background-color: crimson;
@@ -134,6 +167,8 @@ main {
   &__avatar {
     & img {
       width: 100%;
+      border: 4px solid #333;
+      border-radius: 15px;
     }
   }
 
@@ -148,7 +183,7 @@ main {
   display: grid;
   height: 100%;
   align-items: center;
-  gap: 40px;
+  gap: 3rem;
   grid-template-columns: 1fr 1fr;
 }
 
@@ -217,7 +252,7 @@ i {
     text-align: right;
 
     & .box {
-      transform: skew(4deg);
+      transform: skew(1deg);
     }
   }
 
@@ -254,4 +289,16 @@ i {
     color: var(--site-highlight);
     transform: translateY(2px);
   }
+}
+
+/* Modal */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
 }

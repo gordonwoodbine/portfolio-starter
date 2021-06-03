@@ -18,7 +18,7 @@ const Home = () => {
             <i className="far fa-smile-beam"></i>
             </h1>
           <h2 className="home__text__tag">I'm a <span className="highlight">web developer</span>, currently focusing on the front-end. I love to work on simple and elegant user interfaces.</h2>
-          <p>I built this site so you can learn a little bit more about me, the technologies I like to use and some of the projects I've built to date. I hope you like it!</p>
+          <p>This little site is all about me, the technologies I either know or am learning, what I've done and where (I think) I'm going. Wikipedia it ain't.</p>
           <div className="home-btns">
             <Link to="/about" className="link-btn">
               <motion.button className="btn cta-btn" variants={buttonVariants} whileHover='hover'>About Me</motion.button>
@@ -30,7 +30,7 @@ const Home = () => {
         </div>
         <div className="home__avatar">
           <div className="home__avatar__img-wrapper">
-            <img src="img/home-icon.png" alt="icon of a computer and a mobile phone" />
+            <img src="img/teal-scan.jpg" alt="icon of a computer and a mobile phone" />
           </div>
         </div>
       </div>
