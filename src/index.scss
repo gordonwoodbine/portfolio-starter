@@ -25,7 +25,7 @@ ul {
 }
 
 .test {
-  margin: 2rem 0 1rem 0;
+  margin: 0rem 0 3rem 0;
   display: inline-block;
   position: relative;
 }
@@ -39,6 +39,19 @@ ul {
   bottom: -14px;
   left: 0;
   transform: rotate(1deg);
+}
+
+.btn-group {
+  display: flex;
+  margin-top: auto;
+
+  & .btn {
+    margin-right: 1rem;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
 }
 
 body {
@@ -79,9 +92,12 @@ p {
   font-weight: 700;
 }
 
-.a {
-  display: inline-block;
-  margin-left: 30px;
+.q-and-a-block {
+  margin-bottom: 0.5rem;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .box {
@@ -225,6 +241,7 @@ i {
   font-size: 1.2rem;
   font-weight: 600;
   cursor: pointer;
+  text-align: center;
 }
 
 .btn--outline {
@@ -265,6 +282,64 @@ i {
 
 .projects {
   margin-top: 2rem;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 2rem 0;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #333;
+  }
+
+  &:not(:empty)::before {
+    margin-right: 1rem;
+  }
+
+  &:not(:empty)::after {
+    margin-left: 1rem;
+  }
+
+  &__icon {
+    transform: rotate(45deg);
+    color: var(--site-highlight);
+  }
+}
+
+/*
+.projects-list {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+*/
+
+.project {
+  display: flex;
+  margin-bottom: 3rem;
+}
+
+.project-tile {
+  flex: 1;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  & img {
+    width: 100%;
+  }
+}
+
+.project-text {
+  flex: 1;
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* Footer */
